@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TWPlay</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9Jy0xMCAtMjUgMTIwIDE3MCcgZmlsbD0nbm9uZSc+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSdnJyBjeD0nNTAlJyBjeT0nNTAlJyByPSc1MCUnPjxzdG9wIG9mZnNldD0nMCUnIHN0b3AtY29sb3I9JyM4YjVjZjYnIHN0b3Atb3BhY2l0eT0nMC41Jy8+PHN0b3Agb2Zmc2V0PSc2MCUnIHN0b3AtY29sb3I9JyM4YjVjZjYnIHN0b3Atb3BhY2l0eT0nMC4xJy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjMDUwNTA1JyBzdG9wLW9wYWNpdHk9JzAuOTUnLz48L3JhZGlhbEdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0nbScgeDE9JzAlJyB5MT0nMCUnIHgyPScxMDAlJyB5Mj0nMTAwJSc+PHN0b3Agb2Zmc2V0PScwJScgc3RvcC1jb2xvcj0nI2ExNjIwNycvPjxzdG9wIG9mZnNldD0nNTAlJyBzdG9wLWNvbG9yPScjZWFiMzA4Jy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjY2E4YTA0Jy8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9J3QnIHgxPScwJScgeTE9JzEwMCUnIHgyPScxMDAlJyB5Mj0nMCUnPjxzdG9wIG9mZnNldD0nMCUnIHN0b3AtY29sb3I9JyM5YTM0MTInLz48c3RvcCBvZmZzZXQ9JzUwJScgc3RvcC1jb2xvcj0nI2ZlZjA4YScvPjxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nIzlhMzQxMicvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9J001MCAwIEw1NSAxNSBMODUgMjUgTDc1IDQwIEw5NSA3MCBMNzUgMTAwIEw4NSAxMTUgTDU1IDEyNSBMNTAgMTQwIEw0NSAxMjUgTDE1IDExNSBMMjUgMTAwIEw1IDcwIEwyNSA0MCBMMTUgMjUgTDQ1IDE1IFonIGZpbGw9J3VybCgjbSknIHN0cm9rZT0nIzA5MDkwYicgc3Ryb2tlLXdpZHRoPScxLjUnLz48ZWxsaXBzZSBjeD0nNTAnIGN5PSc3MCcgcng9JzQyJyByeT0nNjInIGZpbGw9J3VybCgjbSknIHN0cm9rZT0nIzAwMCcgc3Ryb2tlLXdpZHRoPScyJy8+PGVsbGlwc2UgY3g9JzUwJyBjeT0nNzAnIHJ4PSczOCcgcnk9JzU4JyBmaWxsPSd0cmFuc3BhcmVudCcgc3Ryb2tlPSd1cmwoI3QpJyBzdHJva2Utd2lkdGg9JzEuNScvPjxlbGxpcHNlIGN4PSc1MCcgY3k9JzcwJyByeD0nMzUnIHJ5PSc1NScgZmlsbD0ndHJhbnNwYXJlbnQnIHN0cm9rZT0nIzI3MjcyYScgc3Ryb2tlLXdpZHRoPScxJy8+PGVsbGlwc2UgY3g9JzUwJyBjeT0nNzAnIHJ4PSczNCcgcnk9JzU0JyBmaWxsPScjMDUwNTA1JyBzdHJva2U9JyMwMDAnIHN0cm9rZS13aWR0aD0nMicvPjxlbGxpcHNlIGN4PSc1MCcgY3k9JzcwJyByeD0nMzMnIHJ5PSc1MycgZmlsbD0ndXJsKCNnKScvPjxwYXRoIGQ9J00gMjMgNDUgUSA1MCAxNSA3NyA0NSBRIDY1IDMwIDM1IDYwIFonIGZpbGw9JyNmZmZmZmYnIG9wYWNpdHk9JzAuMDgnLz48ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSg1MCwgMTAuNSkgcm90YXRlKDEwKSB0cmFuc2xhdGUoLTUwLCAtMTAuNSknPjxwYXRoIGQ9J00gMzIgMTAgTCA0MCAtOCBMIDUwIC0yIEwgNjAgLTggTCA2OCAxMCBaJyBmaWxsPScjOWEzNDEyJyBzdHJva2U9JyMwOTA5MGInIHN0cm9rZS13aWR0aD0nMS41JyBzdHJva2UtbGluZWpvaW49J3JvdW5kJy8+PHBhdGggZD0nTSAyNSAxMiBMIDE1IC01IEwgMzUgMiBMIDUwIC0xOCBMIDY1IDIgTCA4NSAtNSBMIDc1IDEyIFEgNTAgMjIgMjUgMTIgWicgZmlsbD0ndXJsKCNtKScgc3Ryb2tlPScjMDkwOTBiJyBzdHJva2Utd2lkdGg9JzEuNScgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjxwYXRoIGQ9J00gMjUgMTIgUSA1MCAyMiA3NSAxMiBMIDcyIDE1IFEgNTAgMjUgMjggMTUgWicgZmlsbD0nI2NhOGEwNCcgc3Ryb2tlPScjMDkwOTBiJyBzdHJva2Utd2lkdGg9JzEnLz48L2c+PGcgdHJhbnNmb3JtPSd0cmFuc2xhdGUoMjUsIDQ1KSBzY2FsZSgwLjUpJz48cGF0aCBkPSdNNTAgMTAgQzIwIDEwIDE1IDM1IDIwIDY1IEMyNSA4NSA0MCA5NSA1MCA5NSBDNjAgOTUgNzUgODUgODAgNjUgQzg1IDM1IDgwIDEwIDUwIDEwIFonIGZpbGw9JyM4YjVjZjYnLz48cGF0aCBkPSdNMzAgNDIgUTM4IDMyIDQ1IDQyIFEzOCA0OCAzMCA0MiBaJyBmaWxsPScjMDUwNTA1Jy8+PHBhdGggZD0nTTcwIDQyIFE2MiAzMiA1NSA0MiBRNjIgNDggNzAgNDIgWicgZmlsbD0nIzA1MDUwNScvPjxwYXRoIGQ9J00yMiA2NSBRMzIgNjAgMzggNzUgUTMwIDgwIDIyIDY1IFonIGZpbGw9JyMwNTA1MDUnIG9wYWNpdHk9JzAuNScvPjxwYXRoIGQ9J003OCA2NSBRNjggNjAgNjIgNzUgUTcwIDgwIDc4IDY1IFonIGZpbGw9JyMwNTA1MDUnIG9wYWNpdHk9JzAuNScvPjxwb2x5Z29uIHBvaW50cz0nNTAsMzAgNDUsNTUgNTAsNTggNTUsNTUnIGZpbGw9JyMwNTA1MDUnIG9wYWNpdHk9JzAuNicvPjxwYXRoIGQ9J000MCA3NSBRNTAgODIgNjAgNzUgUTUwIDcxIDQwIDc1IFonIGZpbGw9JyMwNTA1MDUnLz48L2c+PC9zdmc+">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://miniapps.ai/sdk/miniapps-ai-v1.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgDark: '#0e0e10',
+            bgCard: '#18181b',
+            primary: 'rgb(var(--color-primary) / <alpha-value>)',
+            primaryHover: 'rgb(var(--color-primary-hover) / <alpha-value>)',
+            onPrimary: 'rgb(var(--color-on-primary) / <alpha-value>)',
+            accent: '#ffffff',
+            textMuted: '#a1a1aa'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <script>
+    // Aplica o tema imediatamente
+    (function() {
+      try {
+        // Theme Mode Setup
+        const storedSettingsStr = localStorage.getItem('twplay_settings');
+        let mode = 'dark';
+        if (storedSettingsStr) {
+          const storedSettings = JSON.parse(storedSettingsStr);
+          if (storedSettings.themeMode) mode = storedSettings.themeMode;
+        }
+        let isLight = false;
+        if (mode === 'light') isLight = true;
+        else if (mode === 'auto') {
+          isLight = !window.matchMedia('(prefers-color-scheme: dark)').matches;
+        }
+        if (isLight) document.documentElement.classList.add('theme-light');
+
+        const stored = localStorage.getItem('twplay_user');
+        const dorms = [
+          { id: 'ramshackle', color: '#8b5cf6', hover: '#7c3aed' },
+          { id: 'heartslabyul', color: '#ff2424', hover: '#cc0000' },
+          { id: 'savannaclaw', color: '#eab308', hover: '#ca8a04' },
+          { id: 'octavinelle', color: '#818cf8', hover: '#6366f1' },
+          { id: 'scarabia', color: '#7a1111', hover: '#4a0505' },
+          { id: 'pomefiore', color: '#9333ea', hover: '#7e22ce' },
+          { id: 'ignihyde', color: '#06b6d4', hover: '#0891b2' },
+          { id: 'diasomnia', color: '#22c55e', hover: '#16a34a' },
+          { id: 'nrc_staff', color: '#ffffff', hover: '#d4d4d8' }
+        ];
+        let dorm = dorms[0];
+        if (stored) {
+          const user = JSON.parse(stored);
+          if (user && user.dormitory) {
+            const found = dorms.find(d => d.id === user.dormitory);
+            if (found) dorm = found;
+          }
+        }
+        const hexToRgb = (hex) => {
+          const bigint = parseInt(hex.replace('#', ''), 16);
+          return `${(bigint >> 16) & 255} ${(bigint >> 8) & 255} ${bigint & 255}`;
+        };
+        document.documentElement.style.setProperty('--color-primary', hexToRgb(dorm.color));
+        document.documentElement.style.setProperty('--color-primary-hover', hexToRgb(dorm.hover));
+        document.documentElement.style.setProperty('--color-on-primary', dorm.id === 'nrc_staff' ? '0 0 0' : '255 255 255');
+      } catch(e) {}
+    })();
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-bgDark text-gray-200 font-sans antialiased min-h-screen flex flex-col overflow-x-hidden pb-16 md:pb-0">
+
+  <!-- Epic Splash Screen -->
+  <div id="splashScreen" class="fixed inset-0 z-[100000] bg-[#050505] flex flex-col transition-opacity duration-1000 overflow-hidden">
+    <!-- Background magical glow -->
+    <div class="absolute top-1/2 left-1/2 w-[200vw] h-[200vw] rounded-full bg-[radial-gradient(circle_at_center,_var(--color-primary-rgba)_0%,_transparent_50%)] animate-pulse-slow mix-blend-screen pointer-events-none" style="--color-primary-rgba: rgba(var(--color-primary), 0.3); transform: translate(-50%, -50%);"></div>
+    
+    <!-- Unified Animation Box -->
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[320px] md:w-[400px] h-[400px] md:h-[500px] pointer-events-none">
+
+      <!-- The Dark Mirror -->
+      <div class="absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-64 md:w-64 md:h-[340px] text-primary animate-mirror-epic z-10 flex items-center justify-center">
+        <svg viewBox="-20 -35 140 190" class="w-full h-full drop-shadow-[0_0_40px_rgba(var(--color-primary),0.4)] relative z-10 overflow-visible" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="mirrorGlowSplash" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="currentColor" stop-opacity="0.5" />
+              <stop offset="60%" stop-color="currentColor" stop-opacity="0.1" />
+              <stop offset="100%" stop-color="#050505" stop-opacity="0.95" />
+            </radialGradient>
+            <linearGradient id="frameMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#a16207" />
+              <stop offset="50%" stop-color="#eab308" />
+              <stop offset="100%" stop-color="#ca8a04" />
+            </linearGradient>
+            <linearGradient id="goldTrim" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#9a3412" />
+              <stop offset="50%" stop-color="#fef08a" />
+              <stop offset="100%" stop-color="#9a3412" />
+            </linearGradient>
+          </defs>
+          <g class="mirror-group">
+            <path d="M50 0 L55 15 L85 25 L75 40 L95 70 L75 100 L85 115 L55 125 L50 140 L45 125 L15 115 L25 100 L5 70 L25 40 L15 25 L45 15 Z" fill="url(#frameMetal)" stroke="#09090b" stroke-width="1.5"/>
+            <ellipse cx="50" cy="70" rx="42" ry="62" fill="url(#frameMetal)" stroke="#000" stroke-width="2"/>
+            <ellipse cx="50" cy="70" rx="38" ry="58" fill="transparent" stroke="url(#goldTrim)" stroke-width="1.5"/>
+            <ellipse cx="50" cy="70" rx="35" ry="55" fill="transparent" stroke="#27272a" stroke-width="1"/>
+            <ellipse cx="50" cy="70" rx="34" ry="54" fill="#050505" stroke="#000" stroke-width="2"/>
+            <ellipse cx="50" cy="70" rx="33" ry="53" fill="url(#mirrorGlowSplash)"/>
+                <path d="M 23 45 Q 50 15 77 45 Q 65 30 35 60 Z" fill="#ffffff" opacity="0.08"/>
+                <g class="crown" transform="translate(50, 10.5) rotate(10) translate(-50, -10.5)">
+                  <path d="M 32 10 L 40 -8 L 50 -2 L 60 -8 L 68 10 Z" fill="#9a3412" stroke="#09090b" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M 25 12 L 15 -5 L 35 2 L 50 -18 L 65 2 L 85 -5 L 75 12 Q 50 22 25 12 Z" fill="url(#frameMetal)" stroke="#09090b" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M 25 12 Q 50 22 75 12 L 72 15 Q 50 25 28 15 Z" fill="#ca8a04" stroke="#09090b" stroke-width="1"/>
+                </g>
+              </g>
+        </svg>
+
+        <!-- Mask to Play Button Morphing Area -->
+        <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none text-primary translate-y-[6%]">
+          <!-- 1. The Play Button (Starts visible, morphs out) -->
+          <div class="absolute inset-0 flex items-center justify-center animate-splash-play">
+             <i class="fa-solid fa-play text-6xl md:text-[5.5rem] ml-3 drop-shadow-[0_0_40px_rgba(var(--color-primary),0.8)]"></i>
+          </div>
+          
+          <!-- 2. The Magic Ball (Transition) -->
+          <div class="absolute inset-0 flex items-center justify-center animate-splash-ball">
+             <div class="w-10 h-10 md:w-14 md:h-14 rounded-full bg-current mix-blend-screen shadow-[0_0_40px_currentColor]"></div>
+          </div>
+
+          <!-- 3. The Theater Mask (Fades in at the end) -->
+          <div class="absolute inset-0 flex items-center justify-center animate-splash-mask drop-shadow-[0_0_20px_rgba(var(--color-primary),1)]">
+             <svg viewBox="0 0 100 100" class="w-20 h-20 md:w-28 md:h-28" fill="none">
+             <path d="M50 10 C20 10 15 35 20 65 C25 85 40 95 50 95 C60 95 75 85 80 65 C85 35 80 10 50 10 Z" fill="currentColor"/>
+             <path d="M30 42 Q38 32 45 42 Q38 48 30 42 Z" fill="#050505"/>
+             <path d="M70 42 Q62 32 55 42 Q62 48 70 42 Z" fill="#050505"/>
+             <path d="M22 65 Q32 60 38 75 Q30 80 22 65 Z" fill="#050505" opacity="0.5"/>
+             <path d="M78 65 Q68 60 62 75 Q70 80 78 65 Z" fill="#050505" opacity="0.5"/>
+             <polygon points="50,30 45,55 50,58 55,55" fill="#050505" opacity="0.6"/>
+             <path d="M40 75 Q50 82 60 75 Q50 71 40 75 Z" fill="#050505"/>
+          </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Area -->
+      <div class="absolute top-[80%] md:top-[85%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center z-20 flex flex-col items-center animate-text-epic opacity-0">
+        <h1 class="flex items-baseline justify-center tracking-tighter w-full">
+          <span class="text-[#eab308] text-5xl md:text-6xl drop-shadow-[0_0_20px_rgba(234,179,8,0.4)]" style="font-family: 'Cinzel Decorative', serif;">TW</span>
+          <span class="text-primary font-black tracking-widest text-3xl md:text-4xl ml-2 drop-shadow-[0_0_20px_rgba(var(--color-primary),0.8)]">PLAY</span>
+        </h1>
+        <div class="mt-3 flex items-center justify-center gap-2">
+          <span class="text-[10px] md:text-xs text-primary font-bold uppercase tracking-[0.3em] drop-shadow-md flex items-center gap-2"><i class="fa-solid fa-circle-notch fa-spin"></i> Carregando...</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Navbar Desktop / Top -->
+  <nav class="bg-[#131315]/95 backdrop-blur-md border-b border-white/5 sticky top-0 z-50 shadow-md">
+    <div class="container mx-auto px-4 lg:px-8 flex justify-between items-center h-14 md:h-16">
+      
+      <!-- Logo -->
+      <div class="flex items-center gap-6 lg:gap-8 h-full">
+        <div class="flex items-center gap-1 md:gap-2 cursor-pointer group" onclick="window.location.hash='#home'">
+          
+          <!-- Dark Mirror Nav Logo with Hover Morph -->
+          <div class="relative w-10 h-14 md:w-12 md:h-16 text-primary transition-transform duration-500 drop-shadow-[0_0_8px_rgba(var(--color-primary),0.8)] group">
+            <svg viewBox="-20 -35 140 190" class="w-full h-full drop-shadow-md overflow-visible relative z-10 overflow-visible" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="mirrorGlowNav" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="currentColor" stop-opacity="0.5" />
+                  <stop offset="60%" stop-color="currentColor" stop-opacity="0.1" />
+                  <stop offset="100%" stop-color="#050505" stop-opacity="0.95" />
+                </radialGradient>
+                <linearGradient id="frameMetalNav" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#a16207" />
+                  <stop offset="50%" stop-color="#eab308" />
+                  <stop offset="100%" stop-color="#ca8a04" />
+                </linearGradient>
+                <linearGradient id="goldTrimNav" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#9a3412" />
+                  <stop offset="50%" stop-color="#fef08a" />
+                  <stop offset="100%" stop-color="#9a3412" />
+                </linearGradient>
+              </defs>
+              <g class="mirror-group">
+                <path d="M50 0 L55 15 L85 25 L75 40 L95 70 L75 100 L85 115 L55 125 L50 140 L45 125 L15 115 L25 100 L5 70 L25 40 L15 25 L45 15 Z" fill="url(#frameMetalNav)" stroke="#09090b" stroke-width="1.5"/>
+                <ellipse cx="50" cy="70" rx="42" ry="62" fill="url(#frameMetalNav)" stroke="#000" stroke-width="2"/>
+                <ellipse cx="50" cy="70" rx="38" ry="58" fill="transparent" stroke="url(#goldTrimNav)" stroke-width="1.5"/>
+                <ellipse cx="50" cy="70" rx="35" ry="55" fill="transparent" stroke="#27272a" stroke-width="1"/>
+                <ellipse cx="50" cy="70" rx="34" ry="54" fill="#050505" stroke="#000" stroke-width="2"/>
+                <ellipse cx="50" cy="70" rx="33" ry="53" fill="url(#mirrorGlowNav)"/>
+                <path d="M 23 45 Q 50 15 77 45 Q 65 30 35 60 Z" fill="#ffffff" opacity="0.08"/>
+                <g class="crown" transform="translate(50, 10.5) rotate(10) translate(-50, -10.5)">
+                  <path d="M 32 10 L 40 -8 L 50 -2 L 60 -8 L 68 10 Z" fill="#9a3412" stroke="#09090b" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M 25 12 L 15 -5 L 35 2 L 50 -18 L 65 2 L 85 -5 L 75 12 Q 50 22 25 12 Z" fill="url(#frameMetalNav)" stroke="#09090b" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M 25 12 Q 50 22 75 12 L 72 15 Q 50 25 28 15 Z" fill="#ca8a04" stroke="#09090b" stroke-width="1"/>
+                </g>
+              </g>
+            </svg>
+            
+            <!-- Default: Mask -->
+            <div class="absolute inset-0 flex items-center justify-center z-20 translate-y-[6%] transition-all duration-500 group-hover:opacity-0 group-hover:scale-50 group-hover:rotate-[-10deg] group-hover:blur-[2px] pointer-events-none text-primary drop-shadow-[0_0_10px_currentColor]">
+              <svg viewBox="0 0 100 100" class="w-5 h-5 md:w-6 md:h-6" fill="none">
+                <path d="M50 10 C20 10 15 35 20 65 C25 85 40 95 50 95 C60 95 75 85 80 65 C85 35 80 10 50 10 Z" fill="currentColor"/>
+                <path d="M30 42 Q38 32 45 42 Q38 48 30 42 Z" fill="#050505"/>
+                <path d="M70 42 Q62 32 55 42 Q62 48 70 42 Z" fill="#050505"/>
+                <path d="M22 65 Q32 60 38 75 Q30 80 22 65 Z" fill="#050505" opacity="0.5"/>
+                <path d="M78 65 Q68 60 62 75 Q70 80 78 65 Z" fill="#050505" opacity="0.5"/>
+                <polygon points="50,30 45,55 50,58 55,55" fill="#050505" opacity="0.6"/>
+                <path d="M40 75 Q50 82 60 75 Q50 71 40 75 Z" fill="#050505"/>
+              </svg>
+            </div>
+            
+            <!-- Hover: Play Button -->
+            <div class="absolute inset-0 flex items-center justify-center z-20 translate-y-[6%] transition-all duration-500 opacity-0 scale-50 rotate-[20deg] blur-[2px] group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:blur-0 pointer-events-none">
+               <i class="fa-solid fa-play text-lg md:text-xl text-primary ml-0.5 drop-shadow-[0_0_15px_rgba(var(--color-primary),1)] pointer-events-auto"></i>
+            </div>
+          </div>
+          
+          <h1 class="flex items-baseline tracking-tighter">
+            <span class="text-[#eab308] text-4xl md:text-5xl drop-shadow-[0_0_8px_rgba(234,179,8,0.4)]" style="font-family: 'Cinzel Decorative', serif;">TW</span>
+            <span class="text-primary font-black tracking-widest text-xl md:text-2xl ml-1 drop-shadow-[0_0_10px_rgba(var(--color-primary),0.6)]">PLAY</span>
+            <img id="navDormIcon" onclick="window.playCurrentDormAnimation(event)" class="hidden w-7 h-7 md:w-9 md:h-9 ml-2 cursor-pointer transition-all duration-500 hover:scale-125 hover:-rotate-12 active:scale-90 drop-shadow-[0_0_8px_rgba(var(--color-primary),0.6)]" alt="Dorm">
+          </h1>
+        </div>
+
+        <!-- Links Principais (Desktop) -->
+        <div class="hidden md:flex items-center gap-1 text-sm font-medium h-full">
+          <a href="#home" class="nav-link px-4 h-full flex items-center border-b-2 border-transparent text-textMuted hover:text-white transition-all">Início</a>
+          <a href="#catalog" class="nav-link px-4 h-full flex items-center border-b-2 border-transparent text-textMuted hover:text-white transition-all">Catálogo</a>
+          <a href="#favorites" class="nav-link px-4 h-full flex items-center border-b-2 border-transparent text-textMuted hover:text-white transition-all">Minha Lista</a>
+          <a href="#news" class="nav-link px-4 h-full flex items-center border-b-2 border-transparent text-textMuted hover:text-white transition-all">Agenda</a>
+        </div>
+      </div>
+
+      <!-- Busca e Usuário -->
+      <div class="flex items-center gap-3 md:gap-4">
+        <div class="relative hidden sm:block">
+          <input id="searchInput" type="text" placeholder="Buscar episódios..." class="bg-[#202024] text-sm text-gray-200 rounded-full px-4 py-1.5 pl-9 border border-white/5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-40 lg:w-56 transition-all shadow-inner">
+          <i class="fa-solid fa-search absolute left-3.5 top-1/2 transform -translate-y-1/2 text-gray-500 text-xs"></i>
+        </div>
+        <button onclick="openNotificationsModal()" class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[#202024] flex items-center justify-center hover:bg-primary hover:text-white text-gray-300 transition-colors cursor-pointer relative border border-white/5 shadow-sm">
+          <i class="fa-solid fa-bell text-xs md:text-sm"></i>
+          <span id="notifBadge" class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 border-2 border-[#131315] rounded-full animate-pulse" style="display: none;"></span>
+        </button>
+        <button id="userBtn" onclick="handleUserClick()" class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[#202024] flex items-center justify-center hover:bg-primary transition-colors cursor-pointer overflow-hidden relative border border-white/5 shadow-sm">
+          <i class="fa-solid fa-user text-xs md:text-sm text-gray-300"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Navbar Mobile / Bottom -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 bg-[#131315]/95 backdrop-blur-md border-t border-white/5 z-[90] flex justify-around items-center pb-safe shadow-[0_-5px_15px_rgba(0,0,0,0.5)]">
+    <a href="#home" class="mobile-nav-link flex-1 py-3 flex flex-col items-center gap-1 text-textMuted transition-colors relative">
+      <i class="fa-solid fa-house text-lg mb-0.5 transition-transform duration-300"></i>
+      <span class="text-[10px] font-medium">Início</span>
+      <div class="indicator absolute top-0 w-8 h-0.5 bg-primary rounded-b-full opacity-0 transition-opacity"></div>
+    </a>
+    <a href="#catalog" class="mobile-nav-link flex-1 py-3 flex flex-col items-center gap-1 text-textMuted transition-colors relative">
+      <i class="fa-solid fa-clapperboard text-lg mb-0.5 transition-transform duration-300"></i>
+      <span class="text-[10px] font-medium">Catálogo</span>
+      <div class="indicator absolute top-0 w-8 h-0.5 bg-primary rounded-b-full opacity-0 transition-opacity"></div>
+    </a>
+    <a href="#favorites" class="mobile-nav-link flex-1 py-3 flex flex-col items-center gap-1 text-textMuted transition-colors relative">
+      <i class="fa-solid fa-heart text-lg mb-0.5 transition-transform duration-300"></i>
+      <span class="text-[10px] font-medium">Minha Lista</span>
+      <div class="indicator absolute top-0 w-8 h-0.5 bg-primary rounded-b-full opacity-0 transition-opacity"></div>
+    </a>
+    <a href="#news" class="mobile-nav-link flex-1 py-3 flex flex-col items-center gap-1 text-textMuted transition-colors relative">
+      <i class="fa-solid fa-calendar-days text-lg mb-0.5 transition-transform duration-300"></i>
+      <span class="text-[10px] font-medium">Agenda</span>
+      <div class="indicator absolute top-0 w-8 h-0.5 bg-primary rounded-b-full opacity-0 transition-opacity"></div>
+    </a>
+  </div>
+
+  <!-- VIEWS CONTAINER -->
+  <main class="flex-1 w-full relative">
+
+    <!-- HOME VIEW -->
+    <div id="homeView" class="hidden w-full pb-8">
+      
+      <!-- Hero / Destaque -->
+      <div id="heroSection" class="relative bg-gradient-to-b from-[#1a1a24] to-bgDark pt-8 md:pt-12 pb-10 border-b border-white/5 overflow-hidden">
+        <!-- Elementos decorativos mágicos -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 lg:px-8 flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-start relative z-10">
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-primary/50 to-[#eab308]/50 rounded blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <img src="https://static.zerochan.net/Twisted.Wonderland.full.4480202.jpg" alt="Capa" class="relative w-36 sm:w-44 md:w-56 rounded shadow-2xl border border-white/10 animate-float">
+          </div>
+          
+          <div class="text-center md:text-left pt-2 md:pt-4 flex-1">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3 tracking-tight drop-shadow-lg">Twisted Wonderland</h2>
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 md:gap-3 text-[10px] md:text-xs font-semibold text-textMuted mb-5">
+              <span class="bg-primary text-onPrimary px-2.5 py-1 rounded shadow-[0_0_10px_rgba(var(--color-primary),0.4)]">Série Dublada</span>
+              <span class="bg-white/10 px-2 py-1 rounded border border-white/5">FULL HD</span>
+              <span>Animação • Fantasia • Aventura</span>
+              <span class="text-yellow-400 flex items-center gap-1"><i class="fa-solid fa-star"></i> 4.9</span>
+            </div>
+            <p class="text-sm md:text-base text-gray-300 max-w-3xl leading-relaxed mb-6 md:mb-8 font-medium drop-shadow-md">
+              O estudante Yuken (Yu) é transportado de repente para o mundo mágico e encantado de Twisted Wonderland. Agora ele terá que lidar com monstros, excêntricos aprendizes de magos e situações misteriosas, e tudo isso sem ter magia. Será que o Yu conseguirá voltar para o mundo dele?
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+              <button onclick="window.location.hash='#watch/1'" class="bg-primary hover:bg-primaryHover text-onPrimary font-bold py-3 px-8 rounded transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(var(--color-primary),0.4)] hover:shadow-[0_0_30px_rgba(var(--color-primary),0.6)] w-full sm:w-auto text-sm">
+                <i class="fa-solid fa-play"></i> Começar a Assistir
+              </button>
+              <button onclick="window.location.hash='#catalog'" class="bg-[#202024] hover:bg-[#2a2a2e] text-white font-semibold py-3 px-8 rounded transition-all border border-white/10 hover:border-white/20 flex items-center justify-center gap-2 w-full sm:w-auto text-sm">
+                <i class="fa-solid fa-list"></i> Ver Catálogo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Destaques (Top 4) -->
+      <div class="container mx-auto px-4 lg:px-8 mt-8 md:mt-12">
+        <div class="flex items-center justify-between mb-5 md:mb-6">
+          <h3 class="text-lg md:text-xl font-bold text-white flex items-center gap-2">
+            <span class="w-1.5 h-6 bg-primary rounded-full shadow-[0_0_8px_rgba(var(--color-primary),0.8)]"></span>
+            Em Destaque
+          </h3>
+          <a href="#catalog" class="text-xs md:text-sm text-primary hover:text-primaryHover font-medium flex items-center gap-1 transition-colors">
+            Ver tudo <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div id="homeHighlightsGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <!-- Injetado via JS -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CATALOG VIEW -->
+    <div id="catalogView" class="hidden w-full pb-8">
+      <div class="bg-gradient-to-b from-[#1a1a24] to-bgDark pt-6 md:pt-8 pb-4 border-b border-white/5">
+        <div class="container mx-auto px-4 lg:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <h2 id="catalogTitle" class="text-2xl md:text-3xl font-bold text-white mb-2 flex items-center gap-3">
+              <i class="fa-solid fa-book-journal-whills text-primary"></i> Catálogo Completo
+            </h2>
+            <p class="text-xs md:text-sm text-textMuted">Explore todos os episódios disponíveis na Night Raven College.</p>
+          </div>
+          
+          <div class="relative w-full sm:w-auto group">
+            <select onchange="handleSeasonChange(this)" class="w-full sm:w-auto appearance-none bg-[#202024] text-white text-sm font-semibold rounded-lg px-4 py-2.5 pr-10 border border-white/10 group-hover:border-primary/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all cursor-pointer shadow-lg">
+              <option value="1">Temporada 1 (Heartslabyul)</option>
+              <option value="2">Temporada 2 (Em breve)</option>
+              <option value="3">Temporada 3 (Em breve)</option>
+            </select>
+            <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 pointer-events-none group-hover:text-primary transition-colors"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mx-auto px-4 lg:px-8 mt-6 md:mt-8">
+        <div id="catalogGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+          <!-- Injetado via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- FAVORITES VIEW -->
+    <div id="favoritesView" class="hidden w-full pb-8">
+      <div class="bg-gradient-to-b from-[#1a1a24] to-bgDark pt-6 md:pt-8 pb-6 border-b border-white/5 relative overflow-hidden">
+        <div class="absolute right-10 top-1/2 transform -translate-y-1/2 opacity-5 pointer-events-none">
+          <i class="fa-solid fa-heart text-[15rem]"></i>
+        </div>
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-2 flex items-center gap-3">
+            <i class="fa-solid fa-heart text-accent drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]"></i> Minha Lista
+          </h2>
+          <p class="text-xs md:text-sm text-textMuted">Seus episódios favoritos salvos em seu Espelho Sombrio pessoal.</p>
+        </div>
+      </div>
+      <div class="container mx-auto px-4 lg:px-8 mt-6 md:mt-8">
+        <div id="favoritesPageGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+          <!-- Injetado via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- NEWS VIEW -->
+    <div id="newsView" class="hidden w-full pb-8">
+      <div class="bg-gradient-to-b from-[#1a1a24] to-bgDark pt-6 md:pt-8 pb-6 border-b border-white/5">
+        <div class="container mx-auto px-4 lg:px-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-2 flex items-center gap-3">
+            <i class="fa-solid fa-calendar-days text-primary"></i> Agenda Oficial
+          </h2>
+          <p class="text-xs md:text-sm text-textMuted">Acompanhe todos os eventos, atualizações e comunicados da diretoria da NRC.</p>
+        </div>
+      </div>
+      <div class="container mx-auto px-4 lg:px-8 mt-6 md:mt-8">
+        <div class="w-full h-[500px] md:h-[650px] rounded-xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl relative group">
+          <div class="absolute inset-0 bg-primary/5 pointer-events-none group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+          <iframe src="https://calendar.google.com/calendar/embed?src=twplayapp.oficial%40gmail.com&ctz=America%2FRecife&mode=AGENDA&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&showTz=0" style="border:0; filter: invert(0.92) hue-rotate(180deg) contrast(1.1);" width="100%" height="100%" frameborder="0" scrolling="no" class="relative z-0"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFILE VIEW -->
+    <div id="profileView" class="hidden w-full pb-8 bg-[#09090b]">
+      
+      <!-- Profile Header / Cover -->
+      <div class="h-48 md:h-64 relative overflow-hidden border-b border-white/5 bg-black">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/40 to-bgDark mix-blend-screen z-10 transition-colors duration-1000"></div>
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] z-20"></div>
+        <!-- Efeito Mágico no centro -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-primary/20 blur-[100px] rounded-full z-0 pointer-events-none animate-pulse"></div>
+      </div>
+
+      <div class="container mx-auto px-4 lg:px-8 -mt-24 md:-mt-32 relative z-30 flex flex-col lg:flex-row gap-6 md:gap-8">
+        
+        <!-- Left Col: Student Card -->
+        <div class="w-full lg:w-1/3">
+          <div class="bg-[#18181b] border border-white/10 rounded-2xl shadow-2xl overflow-hidden relative group animate-card">
+            <!-- Glowing Line Top -->
+            <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-primary to-transparent shadow-[0_0_15px_rgba(var(--color-primary),1)]"></div>
+            
+            <div class="p-6 md:p-8 text-center relative">
+              <!-- Watermark Icon -->
+              <div class="absolute top-4 right-4 text-white/5 group-hover:text-primary/10 transition-colors duration-500">
+                <i class="fa-solid fa-id-card text-5xl"></i>
+              </div>
+              
+              <!-- Avatar -->
+              <div class="w-28 h-28 md:w-36 md:h-36 mx-auto rounded-full border-[3px] border-[#18181b] outline outline-2 outline-primary mb-5 overflow-hidden shadow-[0_0_25px_rgba(var(--color-primary),0.5)] bg-black relative group-hover:scale-105 transition-transform duration-500">
+                <img id="profilePageAvatar" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Avatar" class="w-full h-full object-cover">
+              </div>
+              
+              <h2 id="profilePageName" class="text-2xl md:text-3xl font-black text-white mb-1 tracking-tight drop-shadow-md">Nome</h2>
+              <p id="profilePageDorm" class="text-xs md:text-sm text-primary font-bold tracking-widest uppercase mb-6 flex items-center justify-center gap-2 drop-shadow-[0_0_8px_rgba(var(--color-primary),0.6)]"><i class="fa-solid fa-ghost"></i> Ramshackle</p>
+              
+              <!-- Stats -->
+              <div class="grid grid-cols-2 gap-4 border-t border-white/5 pt-6 mb-6">
+                <div class="bg-[#202024] rounded-xl p-3 sm:p-4 border border-white/5 shadow-inner flex flex-col items-center justify-center">
+                  <div class="text-3xl font-black text-white drop-shadow-md" id="profilePageFavCount">0</div>
+                  <div class="text-[9px] sm:text-[10px] text-textMuted uppercase tracking-wider font-semibold mt-1">Favoritos</div>
+                </div>
+                <div class="bg-[#202024] rounded-xl p-3 sm:p-4 border border-white/5 shadow-inner relative overflow-hidden group/level flex flex-col items-center justify-center">
+                  <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover/level:opacity-100 transition-opacity duration-300"></div>
+                  <div class="text-3xl font-black text-primary drop-shadow-[0_0_10px_rgba(var(--color-primary),0.5)] relative z-10" id="profilePageLevelCount">1</div>
+                  <div class="text-[9px] sm:text-[10px] text-textMuted uppercase tracking-wider font-semibold mt-1 relative z-10">Nível Mágico</div>
+                </div>
+              </div>
+
+              <!-- XP Bar -->
+              <div class="text-left">
+                <div class="flex justify-between text-[10px] text-gray-400 mb-2 font-bold uppercase tracking-wider">
+                  <span>XP <span id="profilePageXpCount" class="text-primary ml-1">0</span></span>
+                  <span>Próximo <span id="profilePageNextLevelXp" class="text-white ml-1">100</span></span>
+                </div>
+                <div class="w-full bg-[#131315] rounded-full h-2.5 border border-white/5 overflow-hidden relative shadow-inner">
+                  <div id="profilePageXpBar" class="bg-gradient-to-r from-primary/50 to-primary h-full rounded-full shadow-[0_0_10px_rgba(var(--color-primary),0.8)] transition-all duration-1000 ease-out" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Col: Magic Settings -->
+        <div class="w-full lg:w-2/3 flex flex-col gap-6">
+          <div class="bg-[#18181b] border border-white/10 rounded-2xl p-6 md:p-8 shadow-xl animate-card" style="animation-delay: 0.1s">
+            <h3 class="text-lg md:text-xl font-bold text-white mb-6 flex items-center gap-3">
+              <span class="w-1.5 h-6 bg-primary rounded-full shadow-[0_0_8px_rgba(var(--color-primary),0.8)]"></span>
+              Personalização Mágica
+            </h3>
+            
+            <div class="mb-8">
+              <label class="block text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider mb-4"><i class="fa-solid fa-house-chimney text-textMuted mr-1"></i> Alterar Dormitório</label>
+              <div id="profilePageDormContainer" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3"></div>
+            </div>
+
+            <div>
+              <label class="block text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider mb-4"><i class="fa-solid fa-user-astronaut text-textMuted mr-1"></i> Alterar Personagem</label>
+              <div id="profilePageAvatarContainer" class="flex gap-3 overflow-x-auto pb-4 custom-scrollbar snap-x"></div>
+            </div>
+
+            <div class="mt-4 border-t border-white/10 pt-6">
+              <div class="mb-6">
+                <label class="block text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider mb-4"><i class="fa-solid fa-moon text-textMuted mr-1"></i> Tema Visual</label>
+                <div class="flex gap-2">
+                  <button onclick="setThemeMode('light')" data-mode="light" class="theme-btn flex-1 py-2 px-3 rounded-lg border border-white/10 bg-[#202024] flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 text-[10px] sm:text-xs font-bold text-gray-300 hover:text-white transition-all"><i class="fa-solid fa-sun"></i> Claro</button>
+                  <button onclick="setThemeMode('dark')" data-mode="dark" class="theme-btn flex-1 py-2 px-3 rounded-lg border border-white/10 bg-[#202024] flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 text-[10px] sm:text-xs font-bold text-gray-300 hover:text-white transition-all"><i class="fa-solid fa-moon"></i> Escuro</button>
+                  <button onclick="setThemeMode('auto')" data-mode="auto" class="theme-btn flex-1 py-2 px-3 rounded-lg border border-white/10 bg-[#202024] flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 text-[10px] sm:text-xs font-bold text-gray-300 hover:text-white transition-all"><i class="fa-solid fa-desktop"></i> Auto</button>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between border-t border-white/10 pt-6">
+                <div>
+                  <label class="block text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider mb-1"><i class="fa-solid fa-music text-textMuted mr-1"></i> Trilha Sonora</label>
+                  <p class="text-[10px] text-gray-500">Ative ou desative a música ambiente.</p>
+                </div>
+                <button id="musicToggleBtn" onclick="toggleMusic()" class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary transition-colors focus:outline-none border border-white/10 cursor-pointer">
+                  <span id="musicToggleThumb" class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-6 shadow-md"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#18181b] border border-red-500/20 rounded-2xl p-6 shadow-xl animate-card flex flex-col sm:flex-row items-center justify-between gap-5" style="animation-delay: 0.2s">
+            <div class="text-center sm:text-left">
+              <h4 class="text-red-400 font-bold flex items-center justify-center sm:justify-start gap-2 text-base"><i class="fa-solid fa-door-open"></i> Sair do Espelho</h4>
+              <p class="text-[11px] text-gray-400 mt-1.5">Desconectar sua conta atual deste dispositivo. Seu progresso será mantido.</p>
+            </div>
+            <button onclick="handleLogout()" class="w-full sm:w-auto bg-red-500/10 hover:bg-red-500 text-red-400 hover:text-white font-bold py-3 px-8 rounded-lg transition-all border border-red-500/30 hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.4)] whitespace-nowrap">
+              Desconectar
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- WATCH VIEW -->
+    <div id="watchView" class="hidden w-full pb-8 bg-[#09090b]">
+      <div class="container mx-auto px-0 md:px-4 lg:px-8 md:pt-6">
+        
+        <!-- Top Bar -->
+        <div class="hidden md:flex items-center justify-between mb-4">
+          <button onclick="window.history.back()" class="text-textMuted hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
+            <i class="fa-solid fa-arrow-left"></i> Voltar
+          </button>
+          <span class="text-primary font-medium text-sm flex items-center gap-2"><i class="fa-solid fa-film"></i> Modo Cinema</span>
+        </div>
+
+        <!-- Mobile Top Bar Back Button -->
+        <div class="md:hidden flex items-center p-3 bg-black/50 backdrop-blur border-b border-white/5 sticky top-0 z-40">
+          <button onclick="window.history.back()" class="text-gray-300 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
+            <i class="fa-solid fa-arrow-left"></i> Voltar
+          </button>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-4 md:gap-6">
+          
+          <!-- Area do Video Principal -->
+          <div class="w-full lg:w-3/4">
+            <!-- Player -->
+            <div id="playerContainer" class="w-full aspect-video bg-black md:rounded-lg overflow-hidden shadow-2xl border-y md:border border-white/10 relative group">
+              <!-- Video Injetado via JS -->
+            </div>
+            
+            <!-- Infos do Episódio -->
+            <div class="p-4 md:p-0 md:mt-5">
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                <div>
+                  <h1 id="watchTitle" class="text-xl md:text-3xl font-black text-white mb-1.5 tracking-tight">Carregando...</h1>
+                  <p id="watchSub" class="text-sm text-primary font-bold tracking-widest uppercase">Episódio --</p>
+                </div>
+                <div class="flex flex-wrap gap-2 sm:mt-1">
+                  <button id="btnFavorite" onclick="toggleFavoriteCurrent()" class="bg-[#202024] hover:bg-[#2a2a2e] text-white px-3 py-2 md:py-2 rounded border border-white/10 hover:border-white/30 text-sm transition-all flex items-center justify-center gap-2 shadow-sm flex-1 sm:flex-none transform hover:scale-105">
+                    <i class="fa-regular fa-heart"></i> <span class="hidden sm:inline font-medium">Favoritar</span>
+                  </button>
+                  <button onclick="toggleFakeFullscreen()" class="bg-primary hover:bg-primaryHover text-onPrimary px-3 py-2 md:py-2 rounded text-sm transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(var(--color-primary),0.4)] flex-1 sm:flex-none transform hover:scale-105 font-medium" title="Modo Cinema (Expandir)">
+                    <i class="fa-solid fa-expand"></i> <span class="hidden sm:inline">Expandir</span>
+                  </button>
+                  <button id="btnPrev" class="bg-[#202024] hover:bg-[#2a2a2e] text-white px-3 py-2 md:py-2 rounded border border-white/10 text-sm transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed flex-1 sm:flex-none">
+                    <i class="fa-solid fa-backward-step"></i>
+                  </button>
+                  <button id="btnNext" class="bg-[#202024] hover:bg-[#2a2a2e] text-white px-3 py-2 md:py-2 rounded border border-white/10 text-sm transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed flex-1 sm:flex-none">
+                    <i class="fa-solid fa-forward-step"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar - Lista de Episódios -->
+          <div class="w-full lg:w-1/4 px-4 md:px-0">
+            <div class="bg-[#131315] rounded-lg border border-white/5 overflow-hidden flex flex-col h-[400px] md:h-[600px] shadow-xl">
+              <div class="p-3.5 bg-[#1a1a1f] border-b border-white/5 font-bold text-sm text-white flex justify-between items-center">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-list-ul text-primary"></i> Episódios</span>
+                <div class="relative group">
+                  <select onchange="handleSeasonChange(this)" class="appearance-none text-[10px] bg-[#202024] text-textMuted pl-2.5 pr-6 py-1.5 rounded border border-white/10 hover:border-primary/50 hover:text-white hover:bg-[#2a2a2e] transition-all cursor-pointer focus:outline-none focus:border-primary">
+                    <option value="1">Temporada 1</option>
+                    <option value="2">Temp. 2 (Em breve)</option>
+                    <option value="3">Temp. 3 (Em breve)</option>
+                  </select>
+                  <i class="fa-solid fa-chevron-down text-[8px] absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-textMuted group-hover:text-primary transition-colors"></i>
+                </div>
+              </div>
+              <div id="sidebarList" class="flex-1 overflow-y-auto custom-scrollbar p-2 flex flex-col gap-1.5 bg-[#0e0e10]/50">
+                <!-- Lista Injetada via JS -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#131315] border-t border-white/5 py-8 md:py-10 mt-auto hidden md:block">
+    <div class="container mx-auto px-4 lg:px-8 text-center">
+      <h2 class="flex items-baseline justify-center tracking-tighter mb-4">
+        <span class="text-[#eab308] text-3xl md:text-4xl drop-shadow-[0_0_8px_rgba(234,179,8,0.4)]" style="font-family: 'Cinzel Decorative', serif;">TW</span>
+        <span class="text-primary font-black tracking-widest text-lg md:text-xl ml-1 drop-shadow-[0_0_10px_rgba(var(--color-primary),0.6)]">PLAY</span>
+      </h2>
+      <p class="text-[10px] md:text-xs text-textMuted max-w-xl mx-auto mb-5 leading-relaxed">
+        TWplay é um projeto independente inspirado no universo de Twisted Wonderland. Todo o conteúdo exibido pertence aos seus respectivos proprietários e detentores de direitos autorais. Criado com magia e código para fãs.
+      </p>
+      <div class="flex justify-center gap-6 text-xs md:text-sm text-gray-400 mb-6">
+        <a href="#" onclick="openTermsModal(); return false;" class="hover:text-white hover:underline transition-all">Termos de Uso</a>
+        <a href="mailto:twplayapp.oficial@gmail.com" class="hover:text-white hover:underline transition-all">Contato</a>
+      </div>
+      <div class="flex items-center justify-center gap-2 text-xs md:text-sm text-textMuted pt-6 border-t border-white/5">
+        <span>Desenvolvido por</span>
+        <a href="https://www.instagram.com/heyalx_7?igsh=dzFzYWwzdnJlaDdn" target="_top" rel="noopener noreferrer" class="flex items-center gap-1.5 text-primary hover:text-primaryHover transition-colors font-bold">
+          <i class="fa-brands fa-instagram text-base md:text-lg"></i>
+          <span>@heyalx_7</span>
+        </a>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modais permanecem inalterados estruturalmente, apenas classes Tailwind -->
+  <!-- Modal de Login/Registro -->
+  <div id="authModal" class="fixed inset-0 z-[99999] hidden items-center justify-center p-4 sm:p-6">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeAuthModal()"></div>
+    <div class="relative bg-[#18181b] border border-white/10 rounded-xl shadow-2xl w-full max-w-sm max-h-[90vh] flex flex-col overflow-hidden animate-modal">
+      <div class="flex items-center justify-between p-4 border-b border-white/10 bg-[#131315]">
+        <h2 class="text-lg font-bold text-white flex items-center gap-2" style="font-family: 'Cinzel Decorative', serif;">Espelho Sombrio</h2>
+        <button onclick="closeAuthModal()" class="text-gray-400 hover:text-white transition-colors">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <div class="p-4 sm:p-6 text-sm text-gray-300 space-y-4 overflow-y-auto custom-scrollbar">
+        <p class="text-center text-textMuted mb-4 italic">"Diga o seu nome para o espelho..."</p>
+        
+        <div class="mb-3">
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Dormitório</label>
+          <div id="dormSelectionContainer" class="grid grid-cols-2 sm:grid-cols-4 gap-2"></div>
+        </div>
+
+        <div class="mb-3">
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Personagem (Avatar)</label>
+          <div id="avatarSelectionContainer" class="flex gap-2 overflow-x-auto pb-2 snap-x"></div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Nome de Aluno</label>
+          <input id="authUsername" type="text" placeholder="Seu nome..." class="w-full bg-[#202024] text-white border border-white/10 rounded px-4 py-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" onkeypress="if(event.key === 'Enter') handleLogin()">
+        </div>
+        <button onclick="handleLogin()" class="w-full bg-primary hover:bg-primaryHover text-onPrimary font-bold py-3 rounded transition-all mt-2 shadow-[0_0_15px_rgba(var(--color-primary),0.3)] hover:shadow-[0_0_25px_rgba(var(--color-primary),0.6)] transform hover:scale-[1.02]">
+          Matricular-se
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Termos -->
+  <div id="termsModal" class="fixed inset-0 z-[99999] hidden items-center justify-center p-4 sm:p-6">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeTermsModal()"></div>
+    <div class="relative bg-[#18181b] border border-white/10 rounded-xl shadow-2xl w-full max-w-2xl max-h-[80vh] flex flex-col overflow-hidden animate-modal">
+      <div class="flex items-center justify-between p-4 border-b border-white/10 bg-[#131315]">
+        <h2 class="text-lg font-bold text-white flex items-center gap-2"><i class="fa-solid fa-file-contract text-primary"></i> Termos de Uso</h2>
+        <button onclick="closeTermsModal()" class="text-gray-400 hover:text-white transition-colors">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto custom-scrollbar text-sm text-gray-300 space-y-5 leading-relaxed">
+        <p>Bem-vindo ao <strong>TWPlay</strong>. Ao acessar nosso site, você concorda com os seguintes termos e condições:</p>
+        <div>
+          <h3 class="text-white font-bold mb-1">1. Uso do Conteúdo</h3>
+          <p class="text-textMuted text-xs">Todo o conteúdo disponibilizado neste site é inspirado em obras de terceiros e tem propósito puramente ilustrativo e fictício. Nenhum arquivo de vídeo real é hospedado em nossos servidores.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-bold mb-1">2. Isenção de Responsabilidade</h3>
+          <p class="text-textMuted text-xs">O TWPlay não se responsabiliza pelo conteúdo hospedado em servidores de terceiros. Nós não fazemos o upload de vídeos, apenas indexamos conteúdo público.</p>
+        </div>
+        <div>
+          <h3 class="text-white font-bold mb-1">3. Privacidade e Dados</h3>
+          <p class="text-textMuted text-xs">Respeitamos sua privacidade. Seus "Favoritos" e o histórico (XP) são armazenados localmente no seu dispositivo. Não compartilhamos dados com terceiros.</p>
+        </div>
+      </div>
+      <div class="p-4 border-t border-white/10 bg-[#131315] flex justify-end">
+        <button onclick="closeTermsModal()" class="bg-primary hover:bg-primaryHover text-onPrimary px-6 py-2.5 rounded text-sm font-bold transition-all shadow-[0_0_15px_rgba(var(--color-primary),0.3)]">Concordo e Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Notificações -->
+  <div id="notificationsModal" class="fixed inset-0 z-[99999] hidden items-center justify-center p-4 sm:p-6">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeNotificationsModal()"></div>
+    <div class="relative bg-[#18181b] border border-white/10 rounded-xl shadow-2xl w-full max-w-md flex flex-col overflow-hidden animate-modal max-h-[85vh]">
+      <div class="flex items-center justify-between p-4 border-b border-white/10 bg-[#131315]">
+        <h2 class="text-lg font-bold text-white flex items-center gap-2"><i class="fa-solid fa-bell text-primary"></i> Atualizações</h2>
+        <button onclick="closeNotificationsModal()" class="text-gray-400 hover:text-white transition-colors bg-[#202024] w-8 h-8 rounded-full flex items-center justify-center">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+      <div class="p-4 overflow-y-auto custom-scrollbar space-y-3 bg-gradient-to-b from-[#18181b] to-bgDark" id="notificationsList">
+        <!-- Lista de notificações injetada via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="pages.js" defer></script>
+  <script>
+    // Fallback de segurança fortificado: remove o splash da frente caso qualquer erro não previsto aconteça, garantindo o acesso.
+    setTimeout(() => {
+      const splash = document.getElementById('splashScreen');
+      if (splash && splash.style.display !== 'none') {
+        splash.style.opacity = '0';
+        setTimeout(() => { if(splash) splash.remove(); document.body.style.overflow = ''; }, 800);
+      }
+    }, 8000);
+  </script>
+</body>
+</html>
